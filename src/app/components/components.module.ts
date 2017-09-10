@@ -4,13 +4,22 @@ import {SidebarWidgetComponent} from './sidebar-widget/sidebar-widget.component'
 import {Ng2OrderModule} from 'ng2-order-pipe';
 import {Ng2DragDropModule} from 'ng2-drag-drop';
 import {MainWidgetComponent} from './main-widget/main-widget.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, Ng2OrderModule, Ng2DragDropModule.forRoot()
+    CommonModule,
+    Ng2OrderModule,
+    Ng2DragDropModule.forRoot(),
+    FormsModule
   ],
-  exports: [SidebarWidgetComponent, MainWidgetComponent],
-  declarations: [SidebarWidgetComponent, MainWidgetComponent]
+  exports: [
+    SidebarWidgetComponent,
+    MainWidgetComponent
+  ],
+  declarations: [
+    SidebarWidgetComponent,
+    MainWidgetComponent]
 })
 export class ComponentsModule {
 }

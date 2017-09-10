@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { SplitPaneModule } from 'ng2-split-pane/lib/ng2-split-pane';
+import {AppComponent} from './app.component';
+import {SplitPaneModule} from 'ng2-split-pane/lib/ng2-split-pane';
 import {ComponentsModule} from './components/components.module';
 
 @NgModule({
@@ -12,9 +12,10 @@ import {ComponentsModule} from './components/components.module';
   imports: [
     BrowserModule,
     SplitPaneModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

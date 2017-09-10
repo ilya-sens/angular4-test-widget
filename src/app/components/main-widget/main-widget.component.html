@@ -19,3 +19,8 @@
   </tbody>
 </table>
 <button (click)="createElement()">Add element</button>
+<ng-container *ngIf="elementBeingWatched">
+  <input type="text" [(ngModel)]="elementBeingWatched.id">
+  <input type="text" [(ngModel)]="elementBeingWatched.title">
+  <input type="text" [(ngModel)]="elementBeingWatched.color">
+</ng-container>
