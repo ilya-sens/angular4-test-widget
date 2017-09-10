@@ -7,6 +7,7 @@ import { MainWidgetComponent } from './main-widget/main-widget.component';
   imports: [
     CommonModule
   ],
+  exports: [SidebarWidgetComponent, MainWidgetComponent],
   declarations: [SidebarWidgetComponent, MainWidgetComponent]
 })
 export class ComponentsModule { }
