@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ElementModel} from '../../util/element-model';
 
 @Component({
   selector: 'app-sidebar-widget',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-widget.component.css']
 })
 export class SidebarWidgetComponent implements OnInit {
+  @Input() elements: Array<ElementModel>;
 
   constructor() { }
 
