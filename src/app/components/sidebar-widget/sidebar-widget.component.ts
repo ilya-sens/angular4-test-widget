@@ -4,7 +4,7 @@ import {ElementModel} from '../../util/element-model';
 @Component({
   selector: 'app-sidebar-widget',
   templateUrl: './sidebar-widget.component.html',
-  styleUrls: ['./sidebar-widget.component.css']
+  styleUrls: ['./sidebar-widget.component.scss']
 })
 export class SidebarWidgetComponent implements OnInit {
   @Input() elements: Array<ElementModel>;

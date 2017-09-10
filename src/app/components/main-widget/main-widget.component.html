@@ -1,26 +1,41 @@
-<table>
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Color</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let element of elements">
-    <td>{{element.id}}</td>
-    <td>{{element.title}}</td>
-    <td>{{element.color}}</td>
-    <td>
-      <button (click)="deleteElement(element)">Delete</button>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<button (click)="createElement()">Add element</button>
-<ng-container *ngIf="elementBeingWatched">
-  <input type="text" [(ngModel)]="elementBeingWatched.id">
-  <input type="text" [(ngModel)]="elementBeingWatched.title">
-  <input type="text" [(ngModel)]="elementBeingWatched.color">
-</ng-container>
+<div class="widget-container">
+  <table>
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Color</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let element of elements">
+      <td>{{element.id}}</td>
+      <td>{{element.title}}</td>
+      <td>{{element.color}}</td>
+      <td>
+        <button class="danger" (click)="deleteElement(element)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row main-widget__add-element">
+    <button class="success" (click)="createElement()">Add element</button>
+  </div>
+  <div class="row main-widget__element-details">
+    <ng-container *ngIf="elementBeingWatched">
+      <div class="row-flex">
+        <label class="main-widget__element-detail-label" for="id">Id: </label>
+        <input class="main-widget__element-detail-input" id="id" type="text" [(ngModel)]="elementBeingWatched.id">
+      </div>
+      <div class="row-flex">
+        <label class="main-widget__element-detail-label" for="title">Title: </label>
+        <input class="main-widget__element-detail-input" id="title" type="text" [(ngModel)]="elementBeingWatched.title">
+      </div>
+      <div class="row-flex">
+        <label class="main-widget__element-detail-label" for="color">Color: </label>
+        <input class="main-widget__element-detail-input" id="color" type="text" [(ngModel)]="elementBeingWatched.color">
+      </div>
+    </ng-container>
+  </div>
+</div>

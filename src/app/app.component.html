@@ -1,16 +1,22 @@
-<vertical-split-pane>
-  <div class="split-pane-content-primary">
-    <app-main-widget  [elements]="elements"
-                      [elementBeingWatched]="elementBeingWatched"
-                      (elementMustBeDeleted)="deleteElement($event)"
-                      (elementMustBeCreated)="createElement($event)">
-    </app-main-widget>
-  </div>
+<div class="container">
+  <vertical-split-pane
+    secondary-component-minsize="200"
+    primary-component-minsize="300"
+    primary-component-initialratio="0.8">
+    <div class="split-pane-content-primary">
+      <app-main-widget  [elements]="elements"
+                        [elementBeingWatched]="elementBeingWatched"
+                        (elementMustBeDeleted)="deleteElement($event)"
+                        (elementMustBeCreated)="createElement($event)">
+      </app-main-widget>
+    </div>
 
-  <div class="split-pane-content-secondary">
-    <app-sidebar-widget [elements]="elements"
-                        (elementBeingWatchedChanged)="showInMainWidget($event)">
-    </app-sidebar-widget>
-  </div>
-</vertical-split-pane>
+    <div class="split-pane-content-secondary">
+      <app-sidebar-widget [elements]="elements"
+                          (elementBeingWatchedChanged)="showInMainWidget($event)">
+      </app-sidebar-widget>
+    </div>
+  </vertical-split-pane>
+</div>
+
 <!--{{elements | json}}-->

@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+.main-widget__element-details {
+  padding-top: 5px;
+}
+
+.main-widget__element-detail-label,
+.main-widget__element-detail-input {
+  flex: 50%;
+  margin-bottom: 3px;
+}
+
+.main-widget__element-detail-label {
+  font-weight: 600;
+}

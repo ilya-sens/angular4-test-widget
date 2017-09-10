@@ -4,7 +4,7 @@ import {ElementModel} from '../../util/element-model';
 @Component({
   selector: 'app-main-widget',
   templateUrl: './main-widget.component.html',
-  styleUrls: ['./main-widget.component.css']
+  styleUrls: ['./main-widget.component.scss']
 })
 export class MainWidgetComponent implements OnInit {
   @Input() elements: Array<ElementModel>;

@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+.sidebar-widget__element {
+  margin: 3px;
+  padding: 3px;
+  border-radius: 2px;
+  background-color: $gray-lighter;
+  display: flex;
+  transition: color, background-color .3s;
+  &.sidebar-widget__element--active {
+    color: white;
+  }
+}
+
+.sidebar-widget__element-color {
+  width: 5px;
+  min-height: 100%;
+  border-radius: 2px;
+}
+
+.sidebar-widget__element-id {
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.sidebar-widget__element-title-container {
+  margin-left: 15px;
+}
+
+.sidebar-widget__element-title {
+  font-weight: 600;
+}
