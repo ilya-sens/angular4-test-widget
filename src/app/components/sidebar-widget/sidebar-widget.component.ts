@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ElementModel} from '../../util/element-model';
 
 @Component({
@@ -8,10 +8,28 @@ import {ElementModel} from '../../util/element-model';
 })
 export class SidebarWidgetComponent implements OnInit {
   @Input() elements: Array<ElementModel>;
+  @Output() elementBeingWatchedChanged: EventEmitter<ElementModel> = new EventEmitter();
+
+  elementBeingWatched: ElementModel;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  isElementBeingWatched(element: ElementModel) {
+    // assuming element.id is unique
+    if (this.elementBeingWatched) {
+      return this.elementBeingWatched.id === element.id;
+    } else {
+      return false;
+    }
+  }
+
+  watchElement(element: ElementModel) {
+    if (!this.elementBeingWatched || element.id !== this.elementBeingWatched.id) {
+      this.elementBeingWatched = element;
+      this.elementBeingWatchedChanged.emit(element);
+    }
+  }
 }

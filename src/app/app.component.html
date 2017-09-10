@@ -6,7 +6,7 @@
   </div>
 
   <div class="split-pane-content-secondary">
-    <app-sidebar-widget>
+    <app-sidebar-widget [elements]="elements" (elementBeingWatchedChanged)="showInMainWidget($event)">
 
     </app-sidebar-widget>
   </div>

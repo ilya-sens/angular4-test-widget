@@ -1,3 +1,16 @@
-<p>
-  sidebar-widget works!
-</p>
+<div class="sidebar-widget__element"
+     [class.sidebar-widget__element--active]="isElementBeingWatched(element)"
+     *ngFor="let element of elements | orderBy:'_order'"
+     (click)="watchElement(element)">
+  <div class="sidebar-widget__element--color"></div>
+  <div class="sidebar-widget__element--id">#{{element.id}}</div>
+  <div class="sidebar-widget__element--title-container">
+    <div class="sidebar-widget__element--title">
+      {{element.title}}
+    </div>
+    <div class="sidebar-widget__element--further-details">
+      further details
+    </div>
+  </div>
+  <div class="sidebar-widget__element--drag-drop"></div>
+</div>
