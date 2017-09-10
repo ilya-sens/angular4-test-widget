@@ -1,3 +1,21 @@
-<p>
-  main-widget works!
-</p>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Color</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let element of elements">
+    <td>{{element.id}}</td>
+    <td>{{element.title}}</td>
+    <td>{{element.color}}</td>
+    <td>
+      <button (click)="deleteElement(element)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button (click)="createElement()">Add element</button>

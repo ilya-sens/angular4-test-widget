@@ -7,7 +7,7 @@ import {ElementModel} from './util/element-model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  elementBeingWatched: ElementModel;
 
   elements: Array<ElementModel> = [
     new ElementModel(6, 'Projekt Paris', '#d14836', 'Some long text', 0),
@@ -18,5 +18,19 @@ export class AppComponent {
     new ElementModel(1, 'Projekt Madrid', '#13bc1f', 'Some long text', 5)
   ];
 
-  showInMainWidget(element: ElementModel) {}
+  showInMainWidget(element: ElementModel) {
+    this.elementBeingWatched = element;
+  }
+
+  deleteElement(element: ElementModel) {
+    const index: number = this.elements.indexOf(element);
+    if (index > -1) {
+      this.elements.splice(index, 1);
+    }
+  }
+
+  createElement(element: ElementModel) {
+    this.elements.push(element);
+    this.showInMainWidget(element);
+  }
 }

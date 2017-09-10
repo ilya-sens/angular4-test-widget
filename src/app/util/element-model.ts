@@ -5,7 +5,7 @@ export class ElementModel {
   text: string;
   _order: number;
 
-  constructor(id, title, color, text, _order = 0) {
+  constructor(id = 0, title = '', color = '', text = '', _order = 0) {
     this.id = id;
     this.title = title;
     this.color = color;
