@@ -30,3 +30,15 @@
 .sidebar-widget__element-title {
   font-weight: 600;
 }
+
+.sidebar-widget__element-drag-drop {
+  padding: 5px;
+  margin-left: auto;
+  &>div {
+    margin: 3px;
+    background-color: $white;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+  }
+}

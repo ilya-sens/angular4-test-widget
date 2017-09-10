@@ -1,15 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SidebarWidgetComponent} from './sidebar-widget/sidebar-widget.component';
-import {Ng2OrderModule} from 'ng2-order-pipe';
+import {OrderModule} from 'ngx-order-pipe';
 import {Ng2DragDropModule} from 'ng2-drag-drop';
 import {MainWidgetComponent} from './main-widget/main-widget.component';
 import {FormsModule} from '@angular/forms';
+import {OrderByPipe} from '../util/order.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
-    Ng2OrderModule,
+    OrderModule,
     Ng2DragDropModule.forRoot(),
     FormsModule
   ],
@@ -19,7 +20,9 @@ import {FormsModule} from '@angular/forms';
   ],
   declarations: [
     SidebarWidgetComponent,
-    MainWidgetComponent]
+    MainWidgetComponent,
+    OrderByPipe
+  ],
 })
 export class ComponentsModule {
 }

@@ -1,8 +1,10 @@
 <div class="widget-container">
     <div class="sidebar-widget__element"
+         *ngFor="let element of elements | orderBy:order:sortTrigger; let i = index"
+         draggable [dragData]="element"
+         droppable (onDrop)="changeOrder($event, elements[i])"
          [class.sidebar-widget__element--active]="isElementBeingWatched(element)"
          [ngStyle]="{'background-color': isElementBeingWatched(element) ? element.color : '#eee'}"
-         *ngFor="let element of elements | orderBy:'_order'"
          (click)="watchElement(element)">
       <div class="sidebar-widget__element-color" [ngStyle]="{'background-color': element.color}"></div>
       <div class="sidebar-widget__element-id">#{{element.id}}</div>
@@ -14,6 +16,10 @@
           further details
         </div>
       </div>
-      <div class="sidebar-widget__element-drag-drop"></div>
+      <div class="sidebar-widget__element-drag-drop">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
 </div>
